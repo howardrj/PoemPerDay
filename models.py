@@ -15,8 +15,8 @@ class Poem (models.Model):
         max_length=POEM_MAX_AUTHOR_LEN,
         db_index=True)
 
-    date_selected = models.DateTimeField(
-        help_text='UTC timestamp of when poem was selected',
+    date_selected = models.DateField(
+        help_text='Date of when poem was selected',
         auto_now_add=True,
         db_index=True)
 
