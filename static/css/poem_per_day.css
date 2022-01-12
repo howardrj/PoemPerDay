@@ -1,0 +1,55 @@
+/********/
+/* Body */
+/********/
+
+body {
+    margin: 0;
+    padding: 0 30px;
+    width: auto;
+    height: auto;
+}
+
+/**********/
+/* Header */
+/**********/
+h1 {
+    font-family: "Oswald";
+    font-size: 80px;
+    margin-bottom: 50px;
+    position: relative;
+    top: -20px;
+}
+
+/******************/
+/* Maze Container */
+/******************/
+#maze_container {
+    position: relative;
+    margin: 30px auto;
+    padding: 0px;
+    border: 2px solid black;
+}
+
+/************/
+/* Cell Row */
+/************/
+div.cell_row {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+/********/
+/* Cell */
+/********/
+div.cell {
+    display: inline-block;
+    margin: 0px;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    box-sizing: border-box;
+    text-align: center;
+    transition: border 1s;
+    font-family: "Oswald";
+    font-color: black;
+}
