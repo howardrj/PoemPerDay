@@ -9,12 +9,12 @@ class PoemViewSet (viewsets.ModelViewSet):
     serializer_class = PoemSerializer
     queryset         = Poem.objects.all()
 
-def poem_of_the_day (request):
+def poem_per_day_main (request):
 
     context_dict = {}
 
     # Get poems in reverse order
-    poems = Poem.objects..order_by('-id')
+    poems = Poem.objects.order_by('-id')
 
     if len(poems):
         context_dict['poem'] = poems[0]

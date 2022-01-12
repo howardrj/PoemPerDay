@@ -7,22 +7,22 @@ class Poem (models.Model):
 
     title = models.CharField(
         help_text='Title of poem',
-        max_length=self.POEM_MAX_TITLE_LEN,
-        index=True)
+        max_length=POEM_MAX_TITLE_LEN,
+        db_index=True)
 
     author = models.CharField(
         help_text='Title of poem',
-        max_length=self.POEM_MAX_AUTHOR_LEN,
-        index=True)
+        max_length=POEM_MAX_AUTHOR_LEN,
+        db_index=True)
 
     date_selected = models.DateTimeField(
         help_text='UTC timestamp of when poem was selected',
         auto_now_add=True,
-        index=True)
+        db_index=True)
 
     lines = models.TextField(
         help_text='Lines of poem')
 
     lines_count = models.PositiveIntegerField(
         help_text='Number of lines in poem',
-        index=True)
+        db_index=True)
