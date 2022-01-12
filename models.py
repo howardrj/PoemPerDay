@@ -18,6 +18,7 @@ class Poem (models.Model):
     date_selected = models.DateField(
         help_text='Date of when poem was selected',
         auto_now_add=True,
+        unique=True,
         db_index=True)
 
     lines = models.TextField(
