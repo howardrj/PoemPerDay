@@ -20,36 +20,80 @@ h1 {
     top: -20px;
 }
 
-/******************/
-/* Maze Container */
-/******************/
-#maze_container {
+
+/**********************/
+/* Poem Arrow Buttons */
+/**********************/
+#poem_arrows_container {
+    margin: 30px auto;
+    text-align: center;
+}
+
+.poem_arrow {
+    font-size: 30px;
+    margin-right: 10px;
+    margin-left: 10px;
+    outline: none;
+    background-color: transparent;
+    border: 2px solid black;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.poem_arrow_hoverable
+{
+    background-color: transparent;
+    color: black;
+}
+
+.poem_arrow_hoverable:hover {
+    cursor: hand;
+    cursor: pointer;
+    color: white;
+    background-color: black;
+}
+
+.poem_arrow_not_hoverable {
+    background-color: transparent;
+    color: grey;
+    pointer-events: none;
+}
+
+/**************/
+/* Poem Table */
+/**************/
+#poem_table {
+    font-family: "Oswald";
+    font-size: 40px;
     position: relative;
     margin: 30px auto;
-    padding: 0px;
+    padding: 50px;
     border: 2px solid black;
+    white-space: pre-line;
+    max-width: 60%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-/************/
-/* Cell Row */
-/************/
-div.cell_row {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-}
-
-/********/
-/* Cell */
-/********/
-div.cell {
-    display: inline-block;
-    margin: 0px;
-    border-right: 1px solid black;
-    border-bottom: 1px solid black;
-    box-sizing: border-box;
+#poem_table td {
     text-align: center;
-    transition: border 1s;
-    font-family: "Oswald";
-    font-color: black;
+}
+
+#poem_title {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+#poem_author {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#poem_date {
+    padding: 2px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#poem_text {
+    font-size: 18px;
+    padding-top: 30px;
 }
