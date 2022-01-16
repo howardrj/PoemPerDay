@@ -1,7 +1,3 @@
 *.pyc
-*.sqlite3
-secrets.py
-clear_users
 *.swp
 *.log
-CDN/
