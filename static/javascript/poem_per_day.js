@@ -12,8 +12,6 @@ class Poem
                  lines,
                  poems_by_id_map)
     {
-        console.log(`Poem ${poem_id} constructor`);
-
         this.id = parseInt(poem_id);
         this.title = title;
         this.author = author;
@@ -29,14 +27,14 @@ class Poem
 
     async display ()
     {
-        if (!this.#poem_info_set())
-            await this.#fetch()
+        if (!this._poem_info_set())
+            await this._fetch()
 
         if (!this.next_poem)
-            await this.#fetch_next_poem();
+            await this._fetch_next_poem();
 
         if (!this.prev_poem)
-            await this.#fetch_prev_poem();
+            await this._fetch_prev_poem();
 
         let poem_id_elem = document.getElementById('poem_id');
         poem_id_elem.setAttribute('data-id', this.id);
@@ -53,7 +51,7 @@ class Poem
         let poem_date_elem = document.getElementById('poem_date');
         poem_date_elem.innerHTML = this.date_selected;
 
-        this.#display_arrows();
+        this._display_arrows();
 
         g_current_poem = this;
     }
@@ -68,7 +66,7 @@ class Poem
         this.prev_poem.display();
     }
 
-    #display_arrows ()
+    _display_arrows ()
     {
         let next_arrow = document.getElementById('next_poem_arrow');
         let prev_arrow = document.getElementById('prev_poem_arrow');
@@ -96,7 +94,7 @@ class Poem
         }
     }
 
-    #poem_info_set ()
+    _poem_info_set ()
     {
         return this.title &&
                this.author &&
@@ -104,7 +102,7 @@ class Poem
                this.lines;
     }
 
-    async #fetch ()
+    async _fetch ()
     {
         let response = await fetch(G_POEMS_BY_ID_API_URL + this.id + '/');
 
@@ -119,7 +117,7 @@ class Poem
         this.lines = data['lines'];
     }
 
-    async #fetch_next_poem ()
+    async _fetch_next_poem ()
     {
         let next_id = this.id + 1;
 
@@ -144,7 +142,7 @@ class Poem
                                   this.poems_by_id_map);
     }
 
-    async #fetch_prev_poem ()
+    async _fetch_prev_poem ()
     {
         let prev_id = this.id - 1;
 
