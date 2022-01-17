@@ -26,7 +26,7 @@ class Command(BaseCommand):
         now = datetime.now()
         midnight = datetime.combine(now + timedelta(days=1), time())
 
-        return (midnight - now).seconds
+        return (midnight - now).seconds + 1
 
     def handle (self, *args, **options):
 
