@@ -16,6 +16,7 @@ class Command(BaseCommand):
 
     COMMAND_SLEEP_TIME_AFTER_ERROR = 10
     COMMAND_RANDOM_POEM_URL = 'https://poetrydb.org/random'
+    COMMAND_POEM_MAX_LINES = 100
 
     def add_arguments (self, parser):
         pass
@@ -76,6 +77,10 @@ class Command(BaseCommand):
                 continue
 
             random_poem = random_poems[0]
+
+            if random_poem['linecount'] < self.COMMAND_POEM_MAX_LINES:
+                logger.error("Poem is too long (%d lines)", random_poem['linecount'])
+                continue
 
             try:
                 poem = Poem()
