@@ -78,8 +78,8 @@ class Command(BaseCommand):
 
             random_poem = random_poems[0]
 
-            if random_poem['linecount'] > self.COMMAND_POEM_MAX_LINES:
-                logger.error("Poem is too long (%d lines)", random_poem['linecount'])
+            if int(random_poem['linecount']) > self.COMMAND_POEM_MAX_LINES:
+                logger.error("Poem is too long (%s lines)", random_poem['linecount'])
                 continue
 
             try:
