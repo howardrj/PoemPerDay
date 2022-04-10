@@ -11,7 +11,7 @@ class Poem (models.Model):
         db_index=True)
 
     author = models.CharField(
-        help_text='Title of poem',
+        help_text='Author of poem',
         max_length=POEM_MAX_AUTHOR_LEN,
         db_index=True)
 
