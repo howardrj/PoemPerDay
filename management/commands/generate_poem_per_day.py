@@ -96,7 +96,7 @@ class Command(BaseCommand):
 
             except Exception as e:
                 logger.error("Failed to create poem - %s", e)
-                time.sleep(self.COMMAND_SLEEP_TIME_AFTER_ERROR)
+                sleep(self.COMMAND_SLEEP_TIME_AFTER_ERROR)
                 continue
 
             seconds_to_wait = self.seconds_until_tomorrow()
